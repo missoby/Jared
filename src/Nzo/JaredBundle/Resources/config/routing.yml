@@ -1,3 +1,6 @@
+jared_user_homepage:
+    pattern:  /user/
+    defaults: { _controller: NzoJaredBundle:Users:index }  
     
 #FOS USER 
 fos_user_security:

@@ -8,6 +8,13 @@ class UsersController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('NzoJaredBundle:Users:index.html.twig');
+        if ($this->get('security.context')->isGranted('ROLE_ADMIN')) {
+            throw new AccessDeniedException();
+        }        
+        else if ($this->get('security.context')->isGranted('ROLE_USER')) {
+            return $this->render('NzoJaredBundle:Users:index.html.twig');
+        }
+        else
+            return $this->redirect($this->generateUrl('fos_user_security_login')); 
     }
 }
