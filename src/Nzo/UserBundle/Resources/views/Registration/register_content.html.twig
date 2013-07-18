@@ -1,16 +1,44 @@
-                            
-
-
 <form action="{{ path('fos_user_registration_register') }}" id="contactForm" method="post" {{ form_enctype(form) }}>
-    
-    {{ form_widget(form) }}
+    <fieldset>
+        <legend class="colorlegend"><strong>Sign Up</strong></legend>  
+        <h6 class="style_h">Create a new account:</h6> 
+        {#--Username---#}
+        <div class="input-prepend">
+            <span class="add-on"><i class="icon-user"></i></span>
+            {{ form_widget(form.username,{'attr': {'class': 'input-large','placeholder': 'Username'}}) }}
+        </div>
+        {% if(form_errors(form)) %}
+          <div class="error-input"> {{ form_errors(form) }} </div>
+        {% endif %}
+        {% if(form_errors(form.username)) %}
+          <div class="error-input">{{ form_errors(form.username) }}</div>
+        {% endif %}
+          
+        {#--Email---#}
+        <div class="input-prepend">
+            <span class="add-on"><i class="icon-globe"></i></span>
+            {{ form_widget(form.email,{'attr': {'class': 'input-large','placeholder': 'E-mail'}}) }}
+        </div>
+        {% if(form_errors(form.email)) %}
+          <div class="error-input">{{ form_errors(form.email) }}</div>
+        {% endif %} 
         
-    <div class="buttons-set">
-        <p class="required">* Obligatoire</p>
-                                    {{ form_rest(form) }}
-        <button type="submit" class="button"><span><span>Envoyer</span></span></button>
-    </div>  
-    
+        {#--Password---#}
+        <div class="input-prepend">
+            <span class="add-on"><i class="icon-lock"></i></span>
+            {{ form_widget(form.plainPassword.first,{'attr': {'class': 'input-large','placeholder': 'Password'}}) }}                                      
+        </div>
+        {#--Password Confirm---#}
+        <div class="input-prepend">
+            <span class="add-on"><i class="icon-lock"></i></span>
+            {{ form_widget(form.plainPassword.second,{'attr': {'class': 'input-large','placeholder': 'Password Confirmation'}}) }}
+        </div>
+        <div class="error-input">{{ form_errors(form.plainPassword) }} </div>
+       
+        
+        {{ form_rest(form) }}
+        <input type="submit" value="Sign Up" name="_submit" class="btn btn-primary pull-right">
+    </fieldset>
 </form>
 
 
