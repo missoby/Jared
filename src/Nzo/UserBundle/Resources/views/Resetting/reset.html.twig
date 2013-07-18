@@ -1,0 +1,40 @@
+{% extends "NzoUserBundle::layout.html.twig" %}
+
+
+{% block title %} {{ parent() }} - Mot de Passe Oublier{% endblock %}
+
+{% block slider %}
+<div class="index_slider" style="height: 30px">
+             <nav>
+                <a href="{{path('NzoBookingBundle_homepage')}}">Acceuil</a>
+                <a href="{{path('NzoBookingBundle_hotel_nuit')}}">Hôtel Nuit</a>
+                <a href="about.html">A propos</a>
+                <a href="{{path('NzoBookingBundle_contact')}}">Contact</a>  
+                {% include "NzoUserBundle::connexion.html.twig" %}
+            </nav>
+</div>
+{% endblock slider %}
+
+{% block titre_pages %}
+    <!--titre de la pages-->
+       <div class="breadcrumbs">
+            <ul>
+                <li>
+                    <a href="{{path('NzoBookingBundle_homepage')}}">Acceuil</a>
+                </li>
+                <li>
+                    <strong>Mot de Passe Oublier</strong>
+            </li>
+            </ul>
+        </div>
+    <!--/titre de la pages-->
+{% endblock titre_pages %}
+
+
+{% block content %}
+    
+     <div class="main">
+           {% include "NzoUserBundle:Resetting:reset_content.html.twig" %}
+    </div>
+    
+{% endblock content %}

@@ -1,0 +1,53 @@
+
+{% if is_granted('ROLE_USER') %}                                              
+                          
+                            <!--formulaire-->
+                            <form action="" id="contactForm">
+                                <div class="fieldset">
+                                    <nav class="nav-profil">
+                                        <a href="{{ path('fos_user_profile_edit') }}"><span>Modifier Profil</span></a> &emsp;
+                                        <a href="{{path('fos_user_change_password')}}"><span>Changer mot de passe</span></a>
+                                    </nav>  
+                                    
+                                    <h2 class="legend">Voir Profil</h2> 
+                                    <ul class="form-list">
+                                        <li>
+                                            <div class="field">
+                                                <label>Civilité : <span>{{user.civilite}}</span></label>
+                                            </div>
+                                            <div class="field">
+                                                <label>Nom : <span>{{user.nom}}</span></label>
+                                            </div>
+                                            <div class="field">
+                                                <label>Prénom : <span>{{user.prenom}}</span></label>
+                                            </div>
+                                           
+                                        </li>
+                                        <li>
+                                             <div class="field">
+                                                <label>Numéro de CIN : <span>{{user.cin}}</span></label> 
+                                            </div>
+                                            <div class="field">
+                                                <label>Ville : <span>{{user.ville}}</span></label>
+                                            </div>
+                                            <div class="field">
+                                                <label>Téléphone fix : <span>{{user.tel}}</span></label>
+                                            </div>
+                                            
+                                        </li>
+                                        <li>
+                                            <div class="field">
+                                                <label>Téléphone Portable : <span>{{user.portable}}</span></label>
+                                            </div>
+                                            <div class="field">
+                                                <label>Pays : <span>{{user.pays}}</span></label>
+                                            </div>
+                                            <div class="field">
+                                                <label>Email : <span>{{user.email}}</span></label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </form>
+                            
+   {% endif %}           

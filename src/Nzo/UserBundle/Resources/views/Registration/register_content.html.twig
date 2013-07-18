@@ -1,0 +1,17 @@
+                            
+
+
+<form action="{{ path('fos_user_registration_register') }}" id="contactForm" method="post" {{ form_enctype(form) }}>
+    
+    {{ form_widget(form) }}
+        
+    <div class="buttons-set">
+        <p class="required">* Obligatoire</p>
+                                    {{ form_rest(form) }}
+        <button type="submit" class="button"><span><span>Envoyer</span></span></button>
+    </div>  
+    
+</form>
+
+
+

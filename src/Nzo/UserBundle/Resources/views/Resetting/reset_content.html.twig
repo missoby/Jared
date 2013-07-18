@@ -1,0 +1,27 @@
+
+<form action="{{ path('fos_user_resetting_reset', {'token': token}) }}"  {{ form_enctype(form) }} method="POST" class="box login">
+                         <fieldset class="boxBody">
+                        <h2>Revouveler votre mot de passe</h2>
+                        
+                        {% if form_errors(form)  %}
+                        <div class="validation-advice"> {{form_errors(form)}} </div> 
+                        {% endif %}
+                        
+                        {% if form_errors(form.new)  %}
+                           <div class="validation-advice"> {{form_errors(form.new)}} </div> 
+                         {% endif %}
+   
+                         
+                         <label for="first">Nouveau mot de passe:</label>	
+		         {{ form_widget(form.new.first)}}
+
+                         <label for="second">Confirmer mot de passe:</label>	
+			 {{ form_widget(form.new.second)}}
+
+                        {{ form_rest(form) }}
+                        </fieldset>
+                        <footer>
+                          <input type="submit" tabindex="4" name="_submit" value="Modifier" class="btnLogin">
+                        
+                        </footer>
+    </form>

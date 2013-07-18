@@ -1,0 +1,15 @@
+{% extends "NzoJaredBundle::layout.html.twig" %}
+
+{% block title %} {{ parent() }} Confirmation {% endblock %}
+
+
+
+{% block content %}   
+     <div class="block">
+        <div class="confirm">
+            <p>{{ 'registration.check_email'|trans({'%email%': user.email}, 'FOSUserBundle') }}</p>
+        </div>
+     </div>
+{% endblock content %}
+    
+         

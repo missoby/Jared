@@ -1,0 +1,7 @@
+parameters:
+#    nzo_jared.example.class: Nzo\JaredBundle\Example
+
+services:
+#    nzo_jared.example:
+#        class: %nzo_jared.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

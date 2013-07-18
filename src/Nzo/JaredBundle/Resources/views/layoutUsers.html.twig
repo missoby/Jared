@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>{% block title %} Project - {% endblock title %}</title>
+
+       {% block head %}  {% endblock head %}
+    </head>
+    <body>
+
+    {% block body %}
+
+        {% block content %}
+
+        {% endblock content %}
+
+        {% block footer %}
+        {% endblock footer %}
+
+    {% endblock body %} 
+    </body>
+</html>

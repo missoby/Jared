@@ -1,0 +1,18 @@
+{% extends "NzoJaredBundle::layout.html.twig" %}
+
+{% block title %} {{ parent() }} Confirmation {% endblock %}
+
+
+{% block content %}   
+     <div class="block">
+        <div class="confirm">
+            <p>{{ 'registration.confirmed'|trans({'%username%': user.username}, 'FOSUserBundle') }}</p>
+                {% if app.session is not empty %}
+                    {% set targetUrl = app.session.get('_security.target_path') %}
+                    {% if targetUrl is not empty %}<p><a href="{{ targetUrl }}">{{ 'registration.back'|trans({}, 'FOSUserBundle') }}</a></p>{% endif %}
+                {% endif %}
+        </div>
+     </div>
+{% endblock content %}
+    
+    

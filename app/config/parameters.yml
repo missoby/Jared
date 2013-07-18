@@ -1,0 +1,17 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_driver: pdo_mysql
+    database_host: localhost
+    database_port: null
+    database_name: project_jared
+    database_user: root
+    database_password: root
+    
+    mailer_transport: "gmail"
+    mailer_encryption: "ssl"
+    mailer_host: "smtp.gmail.com"
+    mailer_user: "bourcedefret"
+    mailer_password: "markmark88"
+    
+    locale: en
+    secret: 660a64c113a4322e341061bb425e55546

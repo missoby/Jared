@@ -1,0 +1,18 @@
+{% extends "NzoJaredBundle::layoutUsers.html.twig" %}
+
+{% block title %} {{ parent() }} Users {% endblock %}
+
+{% block head %}
+{% endblock head %}
+
+{% block body %}
+
+{% block content %}
+{% include "NzoUserBundle::connexion.html.twig" %}
+<br> welcome {{app.user.name}}
+{% endblock content %}
+
+{% block footer %}
+{% endblock footer %}
+
+{% endblock body %}  
