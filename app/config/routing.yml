@@ -1,7 +1,3 @@
-nzo_user:
-    resource: "@NzoUserBundle/Resources/config/routing.yml"
-    prefix:   /
-
 nzo_jared:
     resource: "@NzoJaredBundle/Resources/config/routing.yml"
     prefix:   /

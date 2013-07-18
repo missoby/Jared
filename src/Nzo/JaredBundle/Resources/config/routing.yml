@@ -1,6 +1,3 @@
-nzo_jared_homepage:
-    pattern:  /
-    defaults: { _controller: NzoJaredBundle:Front:index }   
     
 #FOS USER 
 fos_user_security:
