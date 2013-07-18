@@ -16,3 +16,10 @@
     font-weight: bold
 }
 .linklogin:hover{text-decoration: underline; color: #2b83b6;}
+
+.error-input ul{
+    list-style-type: none;
+    color: rgb(184, 31, 31);
+    margin-left: 0px;
+    font-size: 12px;
+}

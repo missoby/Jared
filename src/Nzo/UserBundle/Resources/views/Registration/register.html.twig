@@ -3,10 +3,17 @@
 {% block title %} {{ parent() }} Registration {% endblock %}
 
 
-{% block content %}   
-
-<div class="main">
-    {% include "NzoUserBundle:Registration:register_content.html.twig" %}      
+  
+{% block content %}
+<div class="span12">
+    <div class="row">  
+       <div class="bg-login span3 offset4">
+    {% include "NzoUserBundle:Registration:register_content.html.twig" %}   
+       </div>
+    </div>
 </div> 
+<div style="padding: 4px 28px;" class="span3 offset4">
+       <h6 class="text-center style_h">Do you have an account? <a href="{{ path('fos_user_security_login') }}" class="linklogin">Sign In</a></h6>
+</div>
 
 {% endblock content %}
