@@ -1,0 +1,30 @@
+.bg-login{
+    max-width: 300px;
+    border: 1px solid #d5d5d5;
+    margin: 100px auto 20px;
+    padding: 23px 28px;
+    background: #f9f9f9;
+    display: block;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    box-shadow: 0px 0px 2px #dadada, inset 0px -3px 0px #e6e6e6; 
+}
+.foot{
+    max-width: 300px;
+    margin: 0 auto 20px;
+}
+.style_h{color: dimGray;font-weight: normal;font-size: 13px;}
+.colorlegend{color: #2b83b6;}
+.linklogin{
+    color: #2b83b6;
+    font-weight: bold
+}
+.linklogin:hover{text-decoration: underline; color: #2b83b6;}
+
+.error-input ul{
+    list-style-type: none;
+    color: rgb(184, 31, 31);
+    margin-left: 0px;
+    font-size: 12px;
+}
