@@ -58,7 +58,7 @@ registration:
             Pour valider votre compte utilisateur, merci de vous rendre sur %confirmationUrl%
 
             Cordialement,
-            Resa Travelstore.
+            Jared Project.
 
 # Password resetting
 resetting:
@@ -80,7 +80,7 @@ resetting:
             Pour réinitialiser votre mot de passe, merci de vous rendre sur %confirmationUrl%
 
             Cordialement,
-            Resa Travelstore.
+            Jared Project.
 
 # Global strings
 layout:

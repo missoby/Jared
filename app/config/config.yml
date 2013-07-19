@@ -69,7 +69,6 @@ swiftmailer:
 fos_user:
     db_driver:     orm
     firewall_name: main
-
     user_class:   Nzo\UserBundle\Entity\User
     service:
         mailer: fos_user.mailer.twig_swift      
@@ -83,7 +82,7 @@ fos_user:
                 # Adresse de l'expediteur
                 address:         resa.travelstore@gmail.com
                 # Nom de l'expediteur
-                sender_name:    Resa Travelstore
+                sender_name:    Jared Project
         # Permet de définir le template de l'email à envoyer (en html)
             template: NzoUserBundle:Registration:email.txt.twig
             #template: NzoBookingBundle:User:registration.email.twig
@@ -96,7 +95,7 @@ fos_user:
             template: NzoUserBundle:Resetting:email.txt.twig
             from_email:
                 address:        resa.travelstore@gmail.com
-                sender_name:    Resa Travelstore
+                sender_name:    Jared Project
                 
                 
     profile:

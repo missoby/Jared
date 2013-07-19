@@ -1,9 +1,16 @@
 parameters:
 #    nzo_user.example.class: Nzo\UserBundle\Example
 
-services:
+services:            
     nzo_user.registration.form.type:
         class: Nzo\UserBundle\Form\Type\RegistrationFormType
         arguments: [%fos_user.model.user.class%]
         tags:
             - { name: form.type, alias: nzo_user_registration }
+            
+    nzo_user.password_resetting:
+        class: Nzo\UserBundle\EventListener\PasswordResettingListener
+        arguments: [ @router ]
+        tags:
+            - { name: kernel.event_subscriber }            
+            

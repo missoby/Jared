@@ -9,7 +9,10 @@
 
 {% block content %}
 {% include "NzoUserBundle::connexion.html.twig" %}
-<br> welcome {{app.user.username}}
+<br> 
+welcome {{app.user.username}}
+<br>
+<a href="{{ path('fos_user_change_password') }}" > <span> Change Password </span> </a>
 {% endblock content %}
 
 {% block footer %}

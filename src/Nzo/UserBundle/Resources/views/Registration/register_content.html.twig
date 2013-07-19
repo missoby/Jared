@@ -2,14 +2,15 @@
     <fieldset>
         <legend class="colorlegend"><strong>Sign Up</strong></legend>  
         <h6 class="style_h">Create a new account:</h6> 
+        
+        {% if(form_errors(form)) %}
+            <div class="error-input"> {{ form_errors(form) }} </div>
+        {% endif %}
         {#--Username---#}
         <div class="input-prepend">
             <span class="add-on"><i class="icon-user"></i></span>
             {{ form_widget(form.username,{'attr': {'class': 'input-large','placeholder': 'Username'}}) }}
         </div>
-        {% if(form_errors(form)) %}
-          <div class="error-input"> {{ form_errors(form) }} </div>
-        {% endif %}
         {% if(form_errors(form.username)) %}
           <div class="error-input">{{ form_errors(form.username) }}</div>
         {% endif %}
@@ -33,7 +34,11 @@
             <span class="add-on"><i class="icon-lock"></i></span>
             {{ form_widget(form.plainPassword.second,{'attr': {'class': 'input-large','placeholder': 'Password Confirmation'}}) }}
         </div>
-        <div class="error-input">{{ form_errors(form.plainPassword) }} </div>
+            {% if(form_errors(form.plainPassword.first)) %}
+                <div class="error-input">{{ form_errors(form.plainPassword.first) }}</div>
+            {% endif %} 
+
+        
        
         
         {{ form_rest(form) }}

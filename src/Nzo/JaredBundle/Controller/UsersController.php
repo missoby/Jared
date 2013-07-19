@@ -9,7 +9,7 @@ class UsersController extends Controller
     public function indexAction()
     {
         if ($this->get('security.context')->isGranted('ROLE_ADMIN')) {
-            throw new AccessDeniedException();
+            throw new AccessDeniedException(); // route et pas template 
         }        
         else if ($this->get('security.context')->isGranted('ROLE_USER')) {
             return $this->render('NzoJaredBundle:Users:index.html.twig');

@@ -5,18 +5,17 @@
                         
                         {% if form_errors(form)  %}
                         <div class="validation-advice"> {{form_errors(form)}} </div> 
-                        {% endif %}
-                        
-                        {% if form_errors(form.new)  %}
-                           <div class="validation-advice"> {{form_errors(form.new)}} </div> 
-                         {% endif %}
+                        {% endif %}        
    
-                         
+                         {% if(form_errors(form.plainPassword.first)) %}
+                            <div class="error-input">{{ form_errors(form.plainPassword.first) }}</div>
+                        {% endif %} 
+                            
                          <label for="first">Nouveau mot de passe:</label>	
-		         {{ form_widget(form.new.first)}}
+		         {{ form_widget(form.plainPassword.first)}}
 
                          <label for="second">Confirmer mot de passe:</label>	
-			 {{ form_widget(form.new.second)}}
+			 {{ form_widget(form.plainPassword.second)}}
 
                         {{ form_rest(form) }}
                         </fieldset>

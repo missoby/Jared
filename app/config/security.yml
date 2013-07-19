@@ -20,23 +20,22 @@ security:
             form_login:
                 provider: fos_userbundle
                 csrf_provider: form.csrf_provider
-                login_path:     /
+                login_path:     fos_user_security_login
                 use_forward:    false
-                check_path:     /login_check
+                check_path:     fos_user_security_check
                 failure_path:   null
-                default_target_path: /user
+                default_target_path: /
                 remember_me: true
             remember_me:
                 key:         %secret%
             logout:  
-                path:   /logout
-                target: /            
+                path:   fos_user_security_logout
+                target: /login            
             anonymous:    true
         
     access_control:
-    - { path: ^/$, role: IS_AUTHENTICATED_ANONYMOUSLY }  
     - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
     - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
-    - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
+    - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }  
+    - { path: ^/, role: ROLE_USER }
     - { path: ^/admin/, role: ROLE_ADMIN }
-    - { path: ^/user/, role: ROLE_USER }

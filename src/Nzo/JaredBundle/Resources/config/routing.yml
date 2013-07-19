@@ -1,5 +1,5 @@
 jared_user_homepage:
-    pattern:  /user/
+    pattern:  /
     defaults: { _controller: NzoJaredBundle:Users:index }  
     
 #FOS USER 
@@ -20,4 +20,4 @@ fos_user_resetting:
 
 fos_user_change_password:
     resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
-    prefix: /profile
+    prefix: /
