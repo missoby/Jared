@@ -1,10 +1,11 @@
 {% extends "NzoJaredBundle::layout.html.twig" %}
-
+{% block title %} {{ parent() }} Forgot Password{% endblock %}
 
 {% block content %}
-    
-     <div class="main">
-           {% include "NzoUserBundle:Resetting:request_content.html.twig" %}
-    </div>
-    
+<div class="bg-login">
+    {% include "NzoUserBundle:Resetting:request_content.html.twig" %}
+</div>
+<div <div class="foot">
+    <h6 class="text-center style_h">Do you have an account? <a href="{{ path('fos_user_security_login') }}" class="linklogin">Sign In</a></h6>
+</div>    
 {% endblock content %}
