@@ -2,20 +2,5 @@
 
 {% block title %} {{ parent() }} Users {% endblock %}
 
-{% block head %}
-{% endblock head %}
-
-{% block body %}
-
-{% block content %}
-{% include "NzoUserBundle::connexion.html.twig" %}
-<br> 
-welcome {{app.user.username}}
-<br>
-<a href="{{ path('fos_user_change_password') }}" > <span> Change Password </span> </a>
-{% endblock content %}
-
-{% block footer %}
-{% endblock footer %}
-
-{% endblock body %}  
+{% block header %} {{ parent() }} {% endblock header %}
+ 

@@ -1,22 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{% block title %} Project - {% endblock title %}</title>
-
+        <!-- CSS -->
+        <link href="{{ asset('bundles/nzojared/css/bootstrap.css') }}" rel="stylesheet" media="screen">
+        <link href="{{ asset('bundles/nzojared/css/style.css') }}" rel="stylesheet" media="screen">
+        <link href="{{ asset('bundles/nzojared/css/bootstrap-responsive.css') }}" rel="stylesheet" media="screen">
+        <!--FONT-->
+        <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'/>
        {% block head %}  {% endblock head %}
     </head>
     <body>
-
+    {% block header %}
+        {#--NavBar Fixed--#}
+        <div class="navbar navbar-fixed-top navbar-inverse">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="{{ path('jared_user_homepage') }}">Project name</a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav">
+                            <li class="divider-vertical"></li>
+                            <li><a href="">Add Project File</a></li>
+                            <li class="divider-vertical"></li>
+                            <li><a href="">Add Project Data</a></li>
+                            <li class="divider-vertical"></li>
+                        </ul>
+                        <ul class="nav pull-right">
+                            <li class="divider-vertical"></li>
+                            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user"></i> Welcome, {{app.user.username}} <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="{{ path('fos_user_change_password') }}" ><i class="icon-lock"></i> Change Password</a></li>
+                                    {% include "NzoUserBundle::connexion.html.twig" %}
+                                </ul>
+                            </li>
+                        </ul>
+                   </div>
+                </div>
+            </div>
+         </div>
+        {#--Header--#}
+        <div class="hero-unit"></div>
+    {% endblock header %}
     {% block body %}
-
-        {% block content %}
-
-        {% endblock content %}
-
-        {% block footer %}
-        {% endblock footer %}
-
+        <div class="container">
+            <div class="row">
+                <div class="span12">
+                    <div class="well">
+                        {% block content %} {% endblock content %}
+                    </div>
+                </div>
+                {% block footer %}{% endblock footer %}
+            </div>
+       </div>
     {% endblock body %} 
     </body>
+    <!--JAVASCRIPT-->
+    <script src="{{ asset('bundles/nzojared/js/jquery-1.10.2.min.js') }}"></script>
+    <script src="{{ asset('bundles/nzojared/js/bootstrap.js') }}"></script>
+    {% block js %}  {% endblock js %}
 </html>

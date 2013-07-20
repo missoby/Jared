@@ -1,8 +1,8 @@
 .bg-login{
     max-width: 300px;
-    border: 1px solid #d5d5d5;
     margin: 100px auto 20px;
     padding: 23px 28px;
+    border: 1px solid #d5d5d5;
     background: #f9f9f9;
     display: block;
     -webkit-border-radius: 3px;
